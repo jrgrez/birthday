@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<%= form_tag(birthdays_path, {method: "GET"}) do %>
+    <%= text_field_tag "search", nil, placeholder: "Buscar Cumpleaños"%>  
+    <%= submit_tag "Buscar Cumpleñoas"%>
+<% end -%>
+
 <h1>Birthdays</h1>
 
 <table>

@@ -5,6 +5,12 @@ class BirthdaysController < ApplicationController
   # GET /birthdays.json
   def index
     @birthdays = Birthday.all
+
+    if params[:search].present?
+        @birthdays = Birthday.search(params[:search])
+    else
+        @birthdays = Birthday.all
+    end
   end
 
   # GET /birthdays/1
